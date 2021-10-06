@@ -65,7 +65,7 @@ let getHolidays = async (country, year) => {
                     let accHeader = createElement('h2', ['accordion-header'], '', `heading${i}`, i);
                     let itemDate = result.response.holidays[i].date.datetime;
                     let { year, month, day } = itemDate;
-                    let accButton = createElement('button', ['accordion-button', 'collapsed'], '<strong>' + result.response.holidays[i].name + '</strong><span></span>' + `${month}/${day}/${year}`, '', i, true);
+                    let accButton = createElement('button', ['accordion-button', 'collapsed'], `<span>${month}/${day}/${year}</span><strong>` + result.response.holidays[i].name + '</strong>', '', i, true);
                     let accCollapse = createElement('div', ['accordion-collapse', 'collapse'], '', `collapse${i}`, i);
                     let accBody = createElement('div', ['accordion-body'], result.response.holidays[i].description, '', i);
                     accordion.appendChild(accItem);
